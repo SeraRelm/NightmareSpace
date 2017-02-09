@@ -31,7 +31,7 @@
 			
 			//Snowflakes disabled, BUT
 			var snowflakesEnabled = false;
-			var snowterrain;
+			var groundsnow;
 			
 			//If there is NOT a "?noSnow" in the URL, then reenable snow (So really this all enables them by default unless you add that string)
 			if( ! /[&?]noSnow/.test(window.location.search) ){
@@ -52,12 +52,13 @@
 			var flakeBoxHeight = 3;
 			var flakeBoxDepth = 3;
 			
-			var snowCollider;
-
+			var groundsnowCollider;
+			var nightmarewalkCollider;
+			
 			//3D Models to load.
 			var  models =
 			[
-				{ name: 'snowterrain07', type: '.obj', position: { x: 0, y: 0, z: 0}, offset: { x: 0, y: 0, z: 0 } }
+				{ name: 'groundsnow', type: '.obj', position: { x: 0, y: 0, z: 0}, offset: { x: 0, y: 0, z: 0 } }
 			];
 			
 			//These two functions are used by my snow to spawn at random locations
@@ -125,14 +126,23 @@
 					//add the meshes to the scene
 					scene.add(obj);
 					
-					if (name === 'snowterrain07') {
+					if (name === 'groundsnowCollider') {
 						//obj.children[1].userData.altspace = {collider: {enabled: false}};
 						//obj.position.set(0, 1, 0);
 						obj.rotation.y = THREE.Math.degToRad(135.5);
 						obj.position.y = 0.2;
 						//console.log(obj);
-						snowterrain = obj;
-						snowCollider = new NativeComponent('n-mesh-collider', {convex: false}, obj);
+						groundsnow = obj;
+						groundsnowCollider = new NativeComponent('n-mesh-collider', {convex: false}, obj);
+					}
+					if (name === 'nightmarewalkCollider') {
+						//obj.children[1].userData.altspace = {collider: {enabled: false}};
+						//obj.position.set(0, 1, 0);
+						obj.rotation.y = THREE.Math.degToRad(135.5);
+						obj.position.y = 0.2;
+						//console.log(obj);
+						nightmarewalk = obj;
+						nightmarewalkCollider = new NativeComponent('n-mesh-collider', {convex: false}, obj);
 					}
                 }
             }
@@ -251,7 +261,7 @@
 				//render the scene
 				renderer.render(scene);
 				
-				//snowterrain.rotation.y = animationInc/200;
+				//groundsnow.rotation.y = animationInc/200;
 
 
 			//SNOWFLAKE ANIMATION STUFF
