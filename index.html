@@ -52,8 +52,8 @@
 			var flakeBoxHeight = 3;
 			var flakeBoxDepth = 3;
 			
-			var groundsnowCollider;
-			var nightmarewalkCollider;
+			var groundsnow;
+			var nightmarewalk;
 			
 			//3D Models to load.
 			var  models =
@@ -126,7 +126,7 @@
 					//add the meshes to the scene
 					scene.add(obj);
 					
-					if (name === 'groundsnowCollider') {
+					if (name === 'groundsnow') {
 						//obj.children[1].userData.altspace = {collider: {enabled: false}};
 						//obj.position.set(0, 1, 0);
 						obj.rotation.y = THREE.Math.degToRad(135.5);
@@ -135,7 +135,7 @@
 						groundsnow = obj;
 						
 					}
-					if (name === 'nightmarewalkCollider') {
+					if (name === 'nightmarewalk') {
 						//obj.children[1].userData.altspace = {collider: {enabled: false}};
 						//obj.position.set(0, 1, 0);
 						obj.rotation.y = THREE.Math.degToRad(135.5);
