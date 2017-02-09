@@ -50,6 +50,8 @@
 			var flakeBoxWidth = 3; // These three set the box in which the snow is spawned
 			var flakeBoxHeight = 3;
 			var flakeBoxDepth = 3;
+			
+			var snowCollider;
 
 			//3D Models to load.
 			var  models =
@@ -129,7 +131,7 @@
 						obj.position.y = 0.2;
 						//console.log(obj);
 						snowterrain = obj;
-						//meshCollider = new NativeComponent('n-mesh-collider', {convex: false}, obj.children[1]);
+						snowCollider = new NativeComponent('n-mesh-collider', {convex: false}, obj.children[1]);
 					}
                 }
             }
@@ -215,7 +217,7 @@
 					snowDownButton.scale.y = 0.1;
 					snowDownButton.position.set(-0.1, -0.05, 0);
 					snowDownButton.addEventListener('cursordown', function(event) {
-						if (numSnowflakes >= 100) {numSnowflakes -= 50;}
+						if (numSnowflakes > 100) {numSnowflakes -= 50;}
 						console.log("subtracting 100 snowflakes");
 					});
 					
@@ -255,12 +257,18 @@
 				//animate snowflakes and create or destroy them if the settings have changed
 				//If snowflakes are enabled...
 				if (snowflakesEnabled == true) {
-					//And if you dont have as many snowflakes as you should
-					if (snowflakes.length < numSnowflakes){
-						//create the snowflakes until you have as many as you should.
-						for(var i = 0; i < numSnowflakes; ++i) {
-							snowflakes.push(createSnowFlake());
-						}
+				//And if you dont have as many snowflakes as you should
+ 					if (snowflakes.length < numSnowflakes){
+					//create the snowflakes until you have as many as you should.
+						var numNewSnowflakes = numSnowflakes - snowflakes.length;
+ 						for(var i = 0; i < numNewSnowflakes; ++i) {
+ 							snowflakes.push(createSnowFlake());
+ 						}
+					}else if(snowflakes.length > numSnowflakes){ 				////NEED THIS TO DECREASE SNOW
+						for(var i = numSnowflakes; i < snowflakes.length; ++i) {
+							scene.remove(snowflakes[snowflakes.length - 1]); 	////REMOVE LAST SNOWFLAKE IN ARRAY FROM SCENE
+							snowflakes.pop(); 									////REMOVE IT FROM THE ARRAY
+						};
 					//If you do have as many snowflakes as you should...
 					} else {
 						//Go through the array of snowflakes and do fancy sin/cosine waves on their position, and drop them by the gravity amount
