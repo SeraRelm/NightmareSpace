@@ -1,4 +1,4 @@
-newmtl lambert2SG
+newmtl corpse:lambert2SG
 illum 4
 Kd 0.75 0.75 0.75
 Ka 1.00 1.00 1.00
