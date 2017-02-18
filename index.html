@@ -55,6 +55,7 @@
 			var groundsnow;
 			var corpse;
 			var carinside;
+			var bedandchair;
 			var nightmarewalkCollider;
 			
 			//3D Models to load.
@@ -63,6 +64,7 @@
 				{ name: 'groundsnow', type: '.obj', position: { x: 0, y: 0, z: 0}, offset: { x: 0, y: 0, z: 0 } },
 				{ name: 'corpse', type: '.obj', position: { x: 0, y: 0, z: 0}, offset: { x: 0, y: 0, z: 0 } },
 				{ name: 'carinside', type: '.obj', position: { x: 0, y: 0, z: 0}, offset: { x: 0, y: 0, z: 0 } },
+				{ name: 'bedandchair', type: '.obj', position: { x: 0, y: 0, z: 0}, offset: { x: 0, y: 0, z: 0 } },
 				{ name: 'nightmarewalk6', type: '.obj', position: { x: 0, y: 0, z: 0}, offset: { x: 0, y: 0, z: 0 } }
 			];
 			
@@ -148,6 +150,14 @@
 						
 					}
 					if (name === 'carinside') {
+						//obj.children[1].userData.altspace = {collider: {enabled: false}};
+						//obj.position.set(0, 1, 0);
+						obj.rotation.y = THREE.Math.degToRad(135.5);
+						obj.position.y = 0.2;
+						console.log(obj);
+						
+					}
+					if (name === 'bedandchair') {
 						//obj.children[1].userData.altspace = {collider: {enabled: false}};
 						//obj.position.set(0, 1, 0);
 						obj.rotation.y = THREE.Math.degToRad(135.5);

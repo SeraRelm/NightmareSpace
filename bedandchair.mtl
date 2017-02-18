@@ -1,0 +1,21 @@
+newmtl lambert2SG
+illum 4
+Kd 0.65 0.65 0.65
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd Gotham_Objects_Mattress_D.jpg
+Ni 1.00
+newmtl lambert3SG
+illum 4
+Kd 0.50 0.50 0.50
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd Gotham_Fences_3BarGate_D.jpg
+Ni 1.00
+newmtl lambert4SG
+illum 4
+Kd 0.50 0.50 0.50
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd Rust_1.jpg
+Ni 1.00
