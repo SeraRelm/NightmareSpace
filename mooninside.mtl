@@ -1,4 +1,32 @@
+newmtl lambert2SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd caf160b2.jpg
+Ni 1.00
 newmtl lambert3SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd 72c40a8a.jpg
+Ni 1.00
+newmtl lambert4SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd 09f5cc6b.jpg
+Ni 1.00
+newmtl lambert5SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd fa08434c.jpg
+Ni 1.00
+newmtl mooninside:lambert3SG
 illum 4
 Kd 0.60 0.60 0.60
 Ka 1.00 1.00 1.00
